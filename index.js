@@ -55,7 +55,7 @@ module.exports = async function (fastify, opts) {
             console.log('form-data', key, value)
         });
         function handler (field, file, filename, encoding, mimetype) {
-            pump(file, fs.createWriteStream(`./storage/mp3/${filename}`))
+            pump(file, fs.createWriteStream(`./services/storage/mp3/${filename}`))
         }
     })
     // ROUTES "POST-WAV" TO STORAGE FOLDER
@@ -80,7 +80,7 @@ module.exports = async function (fastify, opts) {
             console.log('form-data', key, value)
         });
         function handler (field, file, filename, encoding, mimetype) {
-            pump(file, fs.createWriteStream(`./storage/wav/${filename}`))
+            pump(file, fs.createWriteStream(`./services/storage/wav/${filename}`))
         }
     })
     // ROUTES "POST-STEMS" TO STORAGE FOLDER
@@ -105,7 +105,7 @@ module.exports = async function (fastify, opts) {
             console.log('form-data', key, value)
         });
         function handler (field, file, filename, encoding, mimetype) {
-            pump(file, fs.createWriteStream(`./storage/stems/${filename}`))
+            pump(file, fs.createWriteStream(`./services/storage/stems/${filename}`))
         }
     })
 };
