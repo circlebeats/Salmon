@@ -10,7 +10,7 @@ module.exports = async function (fastify, opts) {
     // ROUTES "POST-IMAGES" TO STORAGE FOLDER
     //TODO: Dont repeat yourself
     fastify.post('/beats/images', async (request,reply) => {
-        const mp = await request.multipart(handler, function(err) {
+        const mp = request.multipart(handler, function(err) {
             if(err){
                 reply.code(400).send({
                     uploaded: false,
@@ -36,7 +36,7 @@ module.exports = async function (fastify, opts) {
     //TODO: Dont repeat yourself
     fastify.post('/beats/mp3', async (request,reply) => {
 
-        const mp = await request.multipart(handler, function(err) {
+        const mp = request.multipart(handler, function(err) {
             if(err){
                 reply.code(400).send({
                     uploaded: false,
@@ -61,7 +61,7 @@ module.exports = async function (fastify, opts) {
     // ROUTES "POST-WAV" TO STORAGE FOLDER
     //TODO: Dont repeat yourself
     fastify.post('/beats/wav', async (request,reply) => {
-        const mp = await request.multipart(handler, function(err) {
+        const mp = request.multipart(handler, function(err) {
             if(err){
                 reply.code(400).send({
                     uploaded: false,
@@ -86,7 +86,7 @@ module.exports = async function (fastify, opts) {
     // ROUTES "POST-STEMS" TO STORAGE FOLDER
     //TODO: Dont repeat yourself
     fastify.post('/beats/stems', async (request,reply) => {
-        const mp = await request.multipart(handler, function(err) {
+        const mp = request.multipart(handler, function(err) {
             if(err){
                 reply.code(400).send({
                     uploaded: false,
